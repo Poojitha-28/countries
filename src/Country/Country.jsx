@@ -5,11 +5,18 @@ function Country()
 {
     const [data,setData] = new useState([]);
     useEffect( ()=>{
+        try{
         const fetchData= async () => {
             const data= await axios.get('https://xcountries-backend.azurewebsites.net/all');
             setData(data.data);
         }
         fetchData();
+        }
+        catch(err)
+        {
+            console.log(err);
+        }
+
     },[]);
     return(
         <div style={{display:"flex",
