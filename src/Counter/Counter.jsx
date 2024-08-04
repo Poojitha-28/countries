@@ -28,7 +28,7 @@ function Counter()
     return (
     <>
         <h1>Stopwatch</h1>
-        <h2>Time :{formatTime(timer)}</h2>
+        <h2>Time: {formatTime(timer)}</h2>
         <button onClick={()=>{
            setIsrunning((prev)=>!prev);
         }}>{isRunning?"Stop":"Start"}</button>
