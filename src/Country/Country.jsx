@@ -11,10 +11,9 @@ function Country()
             {
             const data= await axios.get('https://xcountries-backend.azurewebsites.net/all');
             setData(data.data);
-            }catch(error)
+            }catch(err)
             {
-                console.error(err);
-
+                console.error("Error fetching data:", err);
             }
         }
         fetchData();
