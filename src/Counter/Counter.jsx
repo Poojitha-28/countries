@@ -28,10 +28,10 @@ function Counter()
     return (
     <>
         <h1>Stopwatch</h1>
-        <h2>time :{formatTime(timer)}</h2>
+        <h2>Time :{formatTime(timer)}</h2>
         <button onClick={()=>{
            setIsrunning((prev)=>!prev);
-        }}>{isRunning?"stop":"start"}</button>
+        }}>{isRunning?"Stop":"Start"}</button>
         <button onClick={()=>{
             setTimer(0);
             setIsrunning(false);
