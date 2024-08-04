@@ -7,8 +7,15 @@ function Country()
     useEffect( ()=>{
         try{
         const fetchData= async () => {
+            try
+            {
             const data= await axios.get('https://xcountries-backend.azurewebsites.net/all');
             setData(data.data);
+            }catch(error)
+            {
+                console.error(err);
+
+            }
         }
         fetchData();
         }
