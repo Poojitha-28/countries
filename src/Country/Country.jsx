@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import styles from "./Country.module.css"
 
 function Country()
 {
@@ -15,7 +16,7 @@ function Country()
             const filteredData = data.filter(x => x.name.common.toLowerCase().includes(value.toLowerCase()));
         
             setFileterData(filteredData);
-            }, 1000);
+            }, 300);
 
     }
     useEffect( ()=>{
@@ -47,20 +48,7 @@ function Country()
             gap:"30px",
         }}>
           {filterData.map((ele,idx) => ( 
-            <div key={idx} style={
-                {
-                  display:"flex",
-                  flexDirection:"column",
-                  textAlign:"center",
-                  width:"100px",
-                  height:"100px",
-                  alignItems:"center",
-                  borderRadius:"8px",
-                  border: "1px solid black", 
-                  overflow:"hidden",
-                  padding:"5px"
-                }
-            }>   <div style={{width:"100px",height:"100px"}}> 
+            <div key={idx} className={styles.countryCard}>   <div style={{width:"100px",height:"100px"}}> 
                 <img src={ele.flags.svg} alt="Text" style={{maxWidth:"100%",maxHeight:"100%",objectFit:"fill"}} />
                 </div>
                 <h6 style={{padding:"3px"}}>{ele.name.common}</h6>
